@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Sup de cuisine</title>
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <style src="style.css"></style>
+        <h1>Cherchez parmi plus de 1500 recettes du quotidien, simples et généreuses</h1>
+        <input type="text" id="search-bar" placeholder="Recherchez une recette, un ingrédient ...">
+        <button id="search-button">🔍</button>
     </header>
-    <main></main>
+    <main>
+        <div class="filters">
+            <select id="ingredient-filter">
+                <option value="">Ingrédients</option>
+            </select>
+            <select id="type-filter">
+                <option value="">Appareil</option>
+            </select>
+            <select id="util-filter">
+                <option value="">Ustensiles</option>
+            </select>
+        </div>
+        <div class="recipe-list" id="recipe-list"></div>
+    </main>
     <footer>
-        <script src="https://gist.githubusercontent.com/baiello/0a974b9c1ec73d7d0ed7c8abc361fc8e/raw/e598efa6ef42d34cc8d7e35da5afab795941e53e/recipes.json"> </script>
+        <script src="https://gist.githubusercontent.com/baiello/0a974b9c1ec73d7d0ed7c8abc361fc8e/raw/e598efa6ef42d34cc8d7e35da5afab795941e53e/recipes.json"></script>
         <script src="script.js"></script>
     </footer>
 </body>
