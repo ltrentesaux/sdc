@@ -13,7 +13,7 @@ function displayRecipes(recipes) {
         const recipeCard = document.createElement('div');
         recipeCard.classList.add('recipe-card');
         recipeCard.innerHTML = `
-            <img src="ressources/images/${recipe.image}" alt="Image de ${recipe.name}">
+            <img src="ressources/images/recettes/${recipe.image}" alt="Image de ${recipe.name}">
             <h3>${recipe.name}</h3>
             <p><strong>Recette:</strong></p>
             <p> ${recipe.description} </p>
