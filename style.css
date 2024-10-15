@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+header {
+    background-image: url('ressources/images/header.jpg');
+    background-size: cover;
+    padding: 50px 0;
+    color: white;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+#search-bar {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.filters select {
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.recipe-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    width: 200px;
+    padding: 10px;
+    text-align: left;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 150px;
+    background-color: #eee;
+}
+
+.recipe-card h3 {
+    font-size: 1.2rem;
+}
+
+.recipe-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.recipe-card ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Affichage en deux colonnes */
+    gap: 10px;
+}
+
+.recipe-card li {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.recipe-card li strong {
+    font-weight: bold;
+}
+
+.recipe-card li::before {
+    content: ''; /* Retire les puces des listes */
+}
+
+.recipe-card p {
+    font-weight: bold;
+    color: #888; /* Couleur grise pour le titre des ingrédients */
+    text-transform: uppercase;
+    margin: 10px 0 5px;
+    font-size: 0.9rem;
+}
