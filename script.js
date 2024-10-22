@@ -2,6 +2,7 @@ fetch('https://gist.githubusercontent.com/baiello/0a974b9c1ec73d7d0ed7c8abc361fc
     .then(response => response.json())
     .then(data => {
         displayRecipes(data);
+        updateRecipeCount(data.length); // Met à jour le nombre de recettes
     })
     .catch(error => console.error('Erreur lors du chargement des recettes:', error));
 
@@ -32,4 +33,9 @@ function displayRecipes(recipes) {
         `;
         recipeList.appendChild(recipeCard);
     });
+}
+
+function updateRecipeCount(count) {
+    const recipeCountElement = document.getElementById('recipe-count');
+    recipeCountElement.textContent = count; // Met à jour l'élément avec le nombre de recettes
 }
