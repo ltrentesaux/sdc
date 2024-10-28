@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Sup de cuisine</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
     <header>
@@ -13,23 +14,34 @@
     </header>
     <main>
         <div class="filters">
-            <select id="ingredient-filter">
-                <option value="">Ingrédients</option>
-            </select>
-            <select id="type-filter">
-                <option value="">Appareil</option>
-            </select>
-            <select id="util-filter">
-                <option value="">Ustensiles</option>
-            </select>
-            <div id="count-recipes"> 
-                <p>Nombre de recettes : <span id="recipe-count"></span></p>
+            <div class="col-sm-9">
+                <select id="ingredient-filter">
+                    <option value="">Ingrédients</option>
+                </select>
+                <select id="type-filter">
+                    <option value="">Appareil</option>
+                </select>
+                <select id="util-filter">
+                    <option value="">Ustensiles</option>
+                </select>
             </div>
+
+            <div id="count-recipes" class="col-sm-3"> 
+                <p>
+                    <b>
+                        Nombre de recettes : <span id="recipe-count"></span>
+                    </b>
+                </p>
+            </div>
+            
         </div>
+
         <div class="recipe-list" id="recipe-list"></div>
     </main>
     <footer>
         <script src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </footer>
 </body>
 </html>

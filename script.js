@@ -13,6 +13,10 @@ function displayRecipes(recipes) {
     recipes.forEach(recipe => {
         const recipeCard = document.createElement('div');
         recipeCard.classList.add('recipe-card');
+        recipeCard.classList.add('col-xs-6');
+        recipeCard.classList.add('col-sm-4');
+        recipeCard.classList.add('col-md-3');
+        recipeCard.classList.add('col-lg-3');
         recipeCard.innerHTML = `
             <img src="ressources/images/recettes/${recipe.image}" alt="Image de ${recipe.name}">
             <h3>${recipe.name}</h3>

@@ -24,13 +24,18 @@ h1 {
 
 .filters {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     margin: 20px 0;
 }
 
 .filters select {
     margin: 0 10px;
     padding: 10px;
+}
+
+#count-recipes{
+    border: 1px solid black;
+    margin-left: 100px;
 }
 
 .recipe-list {
@@ -43,7 +48,7 @@ h1 {
 .recipe-card {
     background-color: white;
     border: 1px solid #ddd;
-    width: 200px;
+    max-width: 200px;
     padding: 10px;
     text-align: left;
 }
