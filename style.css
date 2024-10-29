@@ -24,17 +24,29 @@ h1 {
 
 .filters {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     margin: 20px 0;
 }
 
 .filters select {
     margin: 0 10px;
     padding: 10px;
+    min-width: 150px;
 }
 
-#count-recipes{
-    border: 1px solid black;
+.choices {
+    width: 150px;
+    position: static;
+    margin: 24px;
+}
+
+.col-sm-7 {
+    display: flex;
+}
+
+#count-recipes {
+    /*border: 1px solid black;*/
     margin-left: 100px;
 }
 
@@ -72,7 +84,8 @@ h1 {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Affichage en deux colonnes */
+    grid-template-columns: repeat(2, 1fr);
+    /* Affichage en deux colonnes */
     gap: 10px;
 }
 
@@ -86,12 +99,14 @@ h1 {
 }
 
 .recipe-card li::before {
-    content: ''; /* Retire les puces des listes */
+    content: '';
+    /* Retire les puces des listes */
 }
 
 .recipe-card p {
     font-weight: bold;
-    color: #888; /* Couleur grise pour le titre des ingrédients */
+    color: #888;
+    /* Couleur grise pour le titre des ingrédients */
     text-transform: uppercase;
     margin: 10px 0 5px;
     font-size: 0.9rem;

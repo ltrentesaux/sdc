@@ -13,10 +13,6 @@ function displayRecipes(recipes) {
     recipes.forEach(recipe => {
         const recipeCard = document.createElement('div');
         recipeCard.classList.add('recipe-card');
-        recipeCard.classList.add('col-xs-6');
-        recipeCard.classList.add('col-sm-4');
-        recipeCard.classList.add('col-md-3');
-        recipeCard.classList.add('col-lg-3');
         recipeCard.innerHTML = `
             <img src="ressources/images/recettes/${recipe.image}" alt="Image de ${recipe.name}">
             <h3>${recipe.name}</h3>
@@ -43,3 +39,38 @@ function updateRecipeCount(count) {
     const recipeCountElement = document.getElementById('recipe-count');
     recipeCountElement.textContent = count; // Met à jour l'élément avec le nombre de recettes
 }
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Charger les données JSON
+    fetch('ressources/listes.json')
+        .then(response => response.json())
+        .then(data => {
+            populateSelect('ingredient-filter', data.Ingredients);
+            populateSelect('type-filter', data.Appareils);
+            populateSelect('util-filter', data.Ustensiles);
+        })
+        .catch(error => console.error('Erreur lors du chargement des listes:', error));
+
+    // Fonction pour remplir les options des selects avec Choices.js
+    function populateSelect(selectId, items) {
+        const selectElement = document.getElementById(selectId);
+
+        // Ajouter les options dynamiquement
+        items.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item;
+            option.textContent = item;
+            selectElement.appendChild(option);
+        });
+
+        // Initialiser Choices.js sur le select
+        new Choices(selectElement, {
+            searchEnabled: true,
+            itemSelectText: '', // Retirer le texte de sélection
+            shouldSort: false, // Garder l'ordre d'origine
+            placeholderValue: selectElement.options[0].text,
+        });
+    }
+});

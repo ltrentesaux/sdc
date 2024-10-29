@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Sup de cuisine</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 </head>
+
 <body>
     <header>
         <h1>Cherchez parmi plus de 1500 recettes du quotidien, simples et généreuses</h1>
@@ -14,7 +17,7 @@
     </header>
     <main>
         <div class="filters">
-            <div class="col-sm-9">
+            <div class="col-sm-7">
                 <select id="ingredient-filter">
                     <option value="">Ingrédients</option>
                 </select>
@@ -24,16 +27,17 @@
                 <select id="util-filter">
                     <option value="">Ustensiles</option>
                 </select>
+
             </div>
 
-            <div id="count-recipes" class="col-sm-3"> 
+            <div id="count-recipes" class="col-sm-5">
                 <p>
                     <b>
                         Nombre de recettes : <span id="recipe-count"></span>
                     </b>
                 </p>
             </div>
-            
+
         </div>
 
         <div class="recipe-list" id="recipe-list"></div>
@@ -42,6 +46,9 @@
         <script src="script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
     </footer>
 </body>
+
 </html>
