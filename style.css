@@ -50,6 +50,27 @@ h1 {
     margin-left: 100px;
 }
 
+.active-filters {
+    margin: 20px 0;
+}
+
+.active-filter {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.active-filter span {
+    margin-left: 5px;
+    cursor: pointer;
+    color: red;
+}
+
+
 .recipe-list {
     display: flex;
     flex-wrap: wrap;
