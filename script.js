@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             displayRecipes(data);
             updateRecipeCount(data.length); // Met à jour le nombre de recettes
+            setupSearch(data); // Initialise la recherche
         })
         .catch(error => console.error('Erreur lors du chargement des recettes:', error));
 
@@ -27,6 +28,33 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('appliance-filter').addEventListener('change', handleFilterChange);
     document.getElementById('util-filter').addEventListener('change', handleFilterChange);
 });
+
+// Fonction pour configurer la recherche
+function setupSearch(recipes) {
+    const searchButton = document.getElementById('search-button');
+    const searchBar = document.getElementById('search-bar');
+
+    searchButton.addEventListener('click', () => {
+        const searchText = searchBar.value.trim().toLowerCase();
+        if (searchText) {
+            const searchResults = recipes.filter(recipe =>
+                recipe.name.toLowerCase().includes(searchText) ||
+                recipe.description.toLowerCase().includes(searchText) ||
+                recipe.ingredients.some(ingredient => ingredient.ingredient.toLowerCase().includes(searchText)) ||
+                recipe.appliance.toLowerCase().includes(searchText) ||
+                recipe.ustensils.some(ust => ust.toLowerCase().includes(searchText))
+            );
+
+            if (searchResults.length > 0) {
+                displayRecipes(searchResults);
+                updateRecipeCount(searchResults.length);
+            } else {
+                alert(`Aucune recette ne contient le mot '${searchText}'`);
+            }
+        }
+    });
+}
+
 
 // Fonction pour remplir les options des selects avec Choices.js
 function populateSelect(selectId, items) {

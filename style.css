@@ -8,18 +8,21 @@ header {
     background-image: url('ressources/images/header.jpg');
     background-size: cover;
     padding: 50px 0;
-    color: white;
 }
 
 h1 {
     font-size: 2rem;
     margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
 }
+
 
 #search-bar {
     width: 300px;
     padding: 10px;
     margin: 10px;
+    color: #000000;
 }
 
 .filters {
